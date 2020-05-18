@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>My LIFF app</title>
-  <link rel="stylesheet" href="css/style.css" media="all">
+  <!-- <link rel="stylesheet" href="css/style.css" media="all"> -->
+  <script>
+    document.write('<link rel="stylesheet" href="css/style.css?=cache="' + new Date().getTime + '>')
+  </script>
 </head>
 <body>
   <p id="os"><b>OS:</b> </p>
@@ -36,11 +39,11 @@
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
 
-  <!-- <script src="js/vconsole.min.js"></script> -->
-  <!-- <script>
+  <script src="js/vconsole.min.js"></script>
+  <script>
     var vConsole = new VConsole()
     console.log("Hello World!")
-  </script> -->
+  </script>
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.1.13/sdk.js"></script>
   <script>
@@ -115,6 +118,7 @@
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+      console.log(profile)
     }
 
     function getEnvironment() {
