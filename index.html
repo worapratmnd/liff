@@ -54,6 +54,7 @@
     }
 
     function closed() {
+      lift.closeWindow()
     }
 
     async function scanCode() {
@@ -62,6 +63,10 @@
     }
 
     function openWindow() {
+      liff.openWindow({
+        url: "https://line.me",
+        external: true
+      })
     }
 
     async function getFriendship() {
