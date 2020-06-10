@@ -34,13 +34,11 @@
       document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
     }
     async function main() {
-      console.log('Main');
-      
-      await liff.init({ liffId: "1654223954-95rVANgJ" })
+      await liff.init({ liffId: "YOUR-LIFF-ID" })
       if (liff.isLoggedIn()) {
         getUserProfile()
       } else {
-        liff.login({ redirectUri: "https://worapratmnd.github.io/liff/answer.html" })
+        liff.login({ redirectUri: "YOUR-GITHUB-PAGES-DOMAIN/liff/path/" })
       }
     }
     main()
